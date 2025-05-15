@@ -143,14 +143,14 @@
                         });
 
                         kakao.maps.event.addListener(marker, 'click', function() {
-                            overlays.forEach(o => o.setMap(null)); // 기존 오버레이 닫기
+                            overlays.forEach(o => o.setMap(null));
                             overlay.setMap(map);
                         });
 
                         scheduleItem.addEventListener('click', () => {
-                            map.setCenter(position);
-                            map.setLevel(1);
-                            overlays.forEach(o => o.setMap(null)); // 기존 오버레이 닫기
+                            map.setLevel(5);
+                            map.panTo(position); // 부드럽게 이동
+                            overlays.forEach(o => o.setMap(null));
                             overlay.setMap(map);
                         });
 

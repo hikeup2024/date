@@ -1,0 +1,117 @@
+#container {
+	display: flex;
+	height: 100dvh;
+}
+
+#map {
+	width: 70%;
+	height: 100%;
+}
+
+#schedule-container {
+	width: 30%;
+	padding: 20px;
+	background-color: #f5f5f5;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+
+#schedule-container h2 {
+	font-weight: 700;
+	font-size: 20px;
+	color: rgb(38,63,57);
+}
+#schedule-list {margin-top: 20px;}
+
+.schedule-item {
+	padding: 15px;
+	margin-bottom: 15px;
+	background: white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+.schedule-item:hover {transform: translateY(-2px);}
+
+
+.schedule-date {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	font-size: 16px;
+	color: rgb(0,0,0);
+}
+.schedule-date span {
+	font-size: 14px;
+	color: rgb(255,0,0);
+}
+
+.schedule-title {
+	font-weight: 700;
+	font-size: 20px;
+	color: rgb(0,0,0);
+}
+
+.schedule-location {
+	margin-top: 5px;
+	font-weight: 400;
+	font-size: 14px;
+	color: rgb(0,0,0);
+}
+
+.custom-overlay {
+	position: relative;
+	bottom: 60px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ddd;
+	float: left;
+	background: white;
+	padding: 10px;
+}
+
+.custom-overlay .date {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	font-size: 16px;
+	color: rgb(0,0,0);
+}
+.custom-overlay .date span {
+	font-size: 14px;
+	color: rgb(255,0,0);
+}
+.custom-overlay .title {
+	font-weight: 700;
+	font-size: 18px;
+	color: rgb(0,0,0);
+}
+
+.custom-overlay:after {
+	content: '';
+	position: absolute;
+	margin-left: -12px;
+	left: 50%;
+	bottom: -12px;
+	width: 22px;
+	height: 12px;
+	background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+
+
+@media screen and (max-width: 850px) {
+	#container {flex-direction: column;}
+	#map {
+		width: 100%;
+		height: 120vw;
+	}
+	#schedule-container {
+		width: 100%;
+		height: calc(100dvh - 120vw);
+	}
+}

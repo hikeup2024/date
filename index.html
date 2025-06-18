@@ -103,7 +103,7 @@
                 const overlays = [];
 
                 for (let i = 1; i < scheduleData.length; i++) {
-                    const [date, title, location, description] = scheduleData[i];
+                    const [date, title, location, sublink, linkcode, linktarget] = scheduleData[i];
                     const formattedDate = formatDateToFull(date);
                     const dday = calculateDday(formattedDate);
 
@@ -113,6 +113,8 @@
                         <div class="schedule-date">${date}<span> ${dday}</span></div>
                         <div class="schedule-title">${title}</div>
                         <div class="schedule-location">${location}</div>
+                        <div class="schedule-sublink"><a href="${sublink}" target="${linktarget}">서브방 입장</a></div>
+                        <div class="schedule-linkcode">참여코드 : ${linkcode}</div>
                     `;
                     scheduleList.appendChild(scheduleItem);
 
